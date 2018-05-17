@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Assignment 1 - Ex 7-8</title>
+    </head>
+    <body>
+        <h2>Esercizi 7-8</h2>
+        <p>Muovi e clicca!</p>
+        <img id="myImg" src="./Immagini/emoticon0.png" alt="Provami" title="Provami" />
+
+        <script type="text/javascript">
+            const img = document.querySelector('img#myImg');
+            img.addEventListener("mouseover", function() {
+                img.setAttribute('src', './Immagini/emoticon1.png');
+            });
+            img.addEventListener("mouseout", function() {
+                img.setAttribute('src', './Immagini/emoticon2.png');
+            });
+            img.addEventListener("click", function() {
+                img.setAttribute('src', './Immagini/emoticon3.png');
+            });
+            img.addEventListener("contextmenu", function() {
+                img.setAttribute('src', './Immagini/emoticon4.png');
+            });
+        </script>
+    </body>
+</html>

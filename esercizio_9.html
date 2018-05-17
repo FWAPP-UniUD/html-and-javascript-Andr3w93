@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Assignment 1 - Ex 9</title>
+    </head>
+    <body>
+        <h2>Esercizio 9</h2>
+        <button id="seek">Seek</button>
+        <button id="hide">Hide</button><br />
+
+        <div id="container"></div>
+
+        <script type="text/javascript">
+            const seek = document.getElementById('seek');
+            const hide = document.getElementById('hide');
+            const container = document.getElementById('container');
+            seek.addEventListener('click', function() {
+                let ph = document.getElementById('placeholder');
+                if (ph == null) {
+                    const div = document.createElement('div');
+                    div.setAttribute('id', 'placeholder');
+                    div.setAttribute('class', 'display');
+                    const div_content = document.createTextNode("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in lorem dui. Donec pretium risus ac augue finibus sollicitudin. Nunc at quam quis quam malesuada maximus id ut ex. Duis odio libero, vestibulum ac euismod in, dapibus in leo. Pellentesque sagittis sagittis rutrum. Nulla facilisi. Integer hendrerit auctor dui in porta. ");
+                    div.appendChild(div_content);
+                    if(container) {
+                        container.appendChild(div);
+                    }
+                } 
+                else if (ph.classList.contains('hidden')) {
+                    ph.setAttribute('class', 'display');
+                }
+            });          
+            hide.addEventListener('click', function() {
+                let ph = document.getElementById('placeholder');
+                if (ph) {
+                    ph.setAttribute('class', 'hidden');
+                } 
+            });          
+        </script>
+
+        <style type="text/css">
+            div.display {
+                display: block;
+            }
+            div.hidden {
+                display: none;
+            }
+        </style>
+    </body>
+</html>
